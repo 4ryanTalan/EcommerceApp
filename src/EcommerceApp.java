@@ -218,11 +218,12 @@ public class EcommerceApp extends JFrame {
         containerPanel.add(new JScrollPane(productTable), BorderLayout.CENTER);
 
         JButton addToCartBtn = new JButton("Add Selected to Cart") {
-            @Override
-            protected void paintComponent(Graphics g) {
-                // Manually draw high-contrast background to bypass OS theme glitch
-                Graphics2D g2 = (Graphics2D) g.create();
-                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            @Override protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+
+            Graphics2D g2 = (Graphics2D) g.create();
+
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 g2.setColor(ACCENT_COLOR);
                 g2.fillRect(0, 0, getWidth(), getHeight());
                 g2.dispose();
