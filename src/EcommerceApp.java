@@ -5,9 +5,9 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
-// ==========================================
-// 2. MODERNIZED FRONTEND / BACKEND ENGINE
-// ==========================================
+
+// FRONTEND / BACKEND ENGINE
+
 public class EcommerceApp extends JFrame {
 
     // Backend State
@@ -217,7 +217,6 @@ public class EcommerceApp extends JFrame {
         productTable.getTableHeader().setReorderingAllowed(false);
         containerPanel.add(new JScrollPane(productTable), BorderLayout.CENTER);
 
-        // RENDERING FIX: Add to Cart Custom Look Configuration
         JButton addToCartBtn = new JButton("Add Selected to Cart") {
             @Override
             protected void paintComponent(Graphics g) {
